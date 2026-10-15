@@ -43,14 +43,14 @@ test('By Locator Apprcohes', async ({ page }) => {
 
   // by Locator
 
-  const productNames = page.locator('.inventory_item_name');
+  const productNames = await page.locator('.inventory_item_name');
   const count = await productNames.count();
 
   console.log('Total No Of count:', count);
 
   for (let i = 0; i < count; i++) {
 
-    const product = await productNames.nth(i).textContent();
+    const product = await productNames.nth.textContent();
 
     console.log(product);
 
